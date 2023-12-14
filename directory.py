@@ -12,7 +12,7 @@ def home():
     return render_template("home.html")
 
 
-@app.route("/employee_search")
+@app.route("/search")
 def get_employee_details():
     """Process search and return the employee details page."""
 
@@ -34,8 +34,7 @@ def get_employee_details():
 
     # If we didn't return the employee details page, send the user back to the
     # page they were on before.
-    return(redirect(request.referrer))
-
+    return redirect(request.referrer)
 
 if __name__ == "__main__":
     app.debug = True
